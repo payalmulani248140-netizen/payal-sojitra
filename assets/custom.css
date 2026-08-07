@@ -414,5 +414,14 @@ span.swatch-color {
     .right_btn {
         display: none;
     }
+    .logo {
+        max-width: 150px;
+        text-align: left;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
 }
 /* Mobile version*/

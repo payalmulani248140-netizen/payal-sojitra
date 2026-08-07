@@ -403,21 +403,8 @@ span.swatch-color {
 @media (max-width:768px){
     .mobile_icon{
         display: block;
-
-
     }
-    .section-header{
-        display: block;
-        font-family: var(--font-secondary);
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 120%;
-        letter-spacing: 0px;
-        vertical-align: middle;
-        color: #000;
-        margin-bottom: 20px;
-        text-align: center;
-    }
+    
     .custom-content-wrap {background: transparent;position: relative;}
     .custom-banner {
         display: grid;
@@ -436,6 +423,26 @@ span.swatch-color {
         left: 0;
         right: 0;
         margin: 0 auto;
+    }
+
+    .bottom_banner {
+        padding: 10px 0;
+    }
+
+    .content_bottom p {
+        font-size: 12px;
+    }
+    .section-header{
+        display: block;
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #000;
+        margin-bottom: 20px;
+        text-align: center;
     }
     .product-box {
         grid-template-columns: repeat(2,1fr);

@@ -434,6 +434,9 @@ span.swatch-color {
     .container {
         max-width: 2840px;
     }
+    .logo {
+        max-width: 403px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

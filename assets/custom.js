@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         document.querySelector('input[name="id"]').value = variant.id;
 
-        document.querySelector('.popup-price').innerHTML =
-            Shopify.formatMoney(variant.price);
+        // document.querySelector('.popup-price').innerHTML =
+        //     Shopify.formatMoney(variant.price);
 
     }
     document.querySelectorAll('.look-icon').forEach((icon) => {

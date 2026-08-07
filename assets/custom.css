@@ -457,6 +457,13 @@ span.swatch-color {
     .right_btn a svg {
         width: 64px;
     }
+    h1.banner_title {
+        font-size: 164.78px;
+    }
+
+    .custom-content-wrap {
+        max-width: 1137px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

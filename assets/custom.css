@@ -153,3 +153,35 @@ h1.banner_title {
     padding: 100px 0;
 }
 /* Product Grid */
+
+
+/* Popup*/
+#shop-look-popup {
+    position: fixed;
+    background: #00000047;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    display: none;
+    left: 0;
+    right: 0;
+    align-items: center;
+}
+
+.popup-body {
+    display: flex;
+}
+
+#shop-look-popup.active {
+    display: flex;
+}
+
+.popup-content {
+    max-width: 600px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+/* Popup*/

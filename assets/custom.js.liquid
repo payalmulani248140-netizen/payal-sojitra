@@ -1,4 +1,9 @@
+window.moneyFormat = {{ shop.money_format | json }};
+
 document.addEventListener("DOMContentLoaded", (event) => {
+    function formatMoney(cents) {
+        return window.moneyFormat.replace('{{amount}}', (cents / 100).toFixed(2));
+    }
     function renderPopup(product) {
 
         document.querySelector('.popup-image').innerHTML = `<img src="${product.featured_image}" alt="${product.title}">`;

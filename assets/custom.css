@@ -91,6 +91,23 @@ h1.banner_title {
     font-family: var(--font-body);
     margin: 40px 0;
 }
+.custom-btn {
+    background: #000;
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    max-width: max-content;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+}
+.custom-btn svg {
+    width: 25px;
+    height: 20px;
+}
+.custom-btn span {
+    text-transform: uppercase;
+}
 .bottom_banner {
     background: #F5F5F5;
     text-align: center;

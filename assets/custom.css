@@ -399,7 +399,7 @@ span.swatch-color {
   font-weight: bold;
 }
 /* Popup*/
-.mobile_icon,.section-header,.custom-btn.mobile_btn
+.mobile_icon,.section-header,.custom-btn.mobile_btn,.mobile_dropdown
 {
     display: none;
 }
@@ -418,6 +418,14 @@ span.swatch-color {
     }
     .header_wrap .right_btn {
         display: none;
+    }
+    .mobile_dropdown {
+        display: block;
+        padding: 25px 0;
+    }
+    .right_btn {
+        max-width: 190px;
+        margin: 0 auto;
     }
     .logo {
         max-width: 150px;

@@ -427,6 +427,9 @@ span.swatch-color {
         max-width: 190px;
         margin: 0 auto;
     }
+    .close-icon {
+        display: none;
+    }
     .logo {
         max-width: 150px;
         text-align: left;

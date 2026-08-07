@@ -2,9 +2,17 @@
     <div class="container">
         <div class="header_wrap">
             
-            <div class="logo">
-                <img src="https://cdn.shopify.com/s/files/1/0802/9169/2580/files/logo.svg?v=1786081447" alt="" loading="lazy">
-            </div>
+            {% if section.settings.logo_image != blank %}
+                <div class="logo">
+                <img
+                    src="{{ section.settings.logo_image | image_url: width: 400 }}"
+                    alt="{{ section.settings.logo_alt | escape }}"
+                    loading="lazy"
+                    width="{{ section.settings.logo_image.width }}"
+                    height="{{ section.settings.logo_image.height }}"
+                >
+                </div>
+            {% endif %}
 
             <div class="subtext">
                 Find the ideal gift for your loved ones.

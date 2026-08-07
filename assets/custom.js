@@ -89,7 +89,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function updateVariant(product) {
 
         const selectedOptions = [];
-        product.options.forEach((optionName, index) => {
+         product.options.forEach((option, index) => {
+
+            optionName =
+                typeof option === 'string'
+                    ? option
+                    : option.name;
 
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
 

@@ -389,6 +389,7 @@ span.swatch-color {
     line-height: 100%;
     letter-spacing: -2%;
     text-transform: capitalize;
+    color: #000;
 
 }
 .swatch input[type="radio"]:checked ~ .swatch-wrapper .value_title {

@@ -89,6 +89,7 @@ h1.banner_title {
     letter-spacing: 0px;
     color: #000000;
     font-family: var(--font-body);
+    margin: 40px 0;
 }
 .bottom_banner {
     background: #F5F5F5;

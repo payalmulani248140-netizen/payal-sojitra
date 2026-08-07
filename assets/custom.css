@@ -396,12 +396,12 @@ span.swatch-color {
   font-weight: bold;
 }
 /* Popup*/
-.mobile_icon{
+.mobile_icon,.section-header{
     display: none;
 }
 /* Mobile version*/
 @media (max-width:768px){
-    .mobile_icon{
+    .mobile_icon,.section-header{
         display: block;
     }
     .custom-content-wrap {background: transparent;position: relative;}

@@ -199,6 +199,7 @@ h1.banner_title {
     left: 0;
     right: 0;
     margin: 0 auto;
+    padding: 16px 17px;
 }
 .close-popup {
     display: flex;

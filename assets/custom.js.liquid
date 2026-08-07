@@ -29,12 +29,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 name="option-${index}"
                                 value="${value}"
                                 ${i === 0 ? 'checked' : ''}>
-
+                        <div class="swatch-wrapper">
                             <span
                                 class="swatch-color"
                                 style="background:${value.toLowerCase()};"
                                 title="${value}">
                             </span>
+                            <span class="value_title>
+                            {{ value }}
+                             </span>
+                            </div>
                         </label>
                     `;
                 });

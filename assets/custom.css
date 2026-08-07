@@ -139,6 +139,9 @@ h1.banner_title {
 .look-item {
     position: relative;
 }
+.look-item img {
+    display: block;
+}
 .product-box {
     display: grid;grid-template-columns: repeat(3,1fr);gap: 20px;padding: 0;
 }

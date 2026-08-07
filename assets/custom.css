@@ -24,4 +24,37 @@ header{
     max-width: 200px;
     display: flex;
 }
+.right_btn a {
+    background: #FFF544;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 40.61px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    padding: 0 25px;
+    align-items: center;
+    gap: 10px;
+}
+.right_btn a svg {
+    width: 20px;
+    height: 20px;
+}
+.right_btn a span {
+    color: #000;
+}
+.subtext p {
+    margin: 0;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 16.67px;
+    line-height: 35.8px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
 /*Custom banner*/

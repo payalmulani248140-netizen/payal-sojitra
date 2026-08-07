@@ -283,7 +283,7 @@ h3.popup-title {
     letter-spacing: 0%;
     text-align: left;
 }
-popup-cart-btn {
+.popup-cart-btn {
     background: #000;
     color: #fff;
     border: 0;

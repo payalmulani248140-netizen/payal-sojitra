@@ -12,7 +12,17 @@
     "custom_banner_VgaM6X": {
       "type": "custom-banner",
       "name": "Custom Banner",
-      "settings": {}
+      "settings": {
+        "logo_image": "shopify://shop_images/logo.svg",
+        "logo_alt": "Logo",
+        "subtext": "",
+        "button_label": "Choose Gift",
+        "button_link": "",
+        "header": "",
+        "subcontent": "",
+        "btn_text": "",
+        "banner_link": ""
+      }
     }
   },
   "order": [

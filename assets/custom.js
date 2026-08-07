@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const handle = this.dataset.handle;
             const response = await fetch(`/products/${handle}.js`);
             const product = await response.json();
+            console.log(product)
             renderPopup(product);
             document.getElementById('shop-look-popup').classList.add('active');
         });

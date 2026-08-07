@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             optionName = typeof option === 'string' ? option : option.name;
             const values = [...new Set(product.variants.map(v => v.options[index]))];
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
-            html += `<div class="variant-group">`;
+            html += `<div class="variant-group" data-option="${optionName}">`;
             html += `<label>${optionName}</label>`;
             if (isColor) {
                 html += `<div class="color-swatches">`;

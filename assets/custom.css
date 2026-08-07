@@ -271,6 +271,7 @@ h3.popup-title {
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;
+    position: relative;
 }
 
 .variant-group label {

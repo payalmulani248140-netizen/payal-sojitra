@@ -1,0 +1,196 @@
+
+document.addEventListener("DOMContentLoaded", (event) => {
+
+
+        const header = document.querySelector("header");
+        const button = document.querySelector(".mobile_icon");
+    if(header){
+        button.addEventListener("click", () => {
+           header.classList.toggle("active_header");
+        });
+    }
+
+    function formatMoney(cents) {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    }).format(cents / 100);
+    }
+    function renderPopup(product) {
+
+        document.querySelector('.popup-image').innerHTML = `<img src="${product.featured_image}" alt="${product.title}">`;
+        document.querySelector('.popup-title').textContent = product.title;
+        document.querySelector('.popup-description').innerHTML = product.description;
+        let html = '';
+
+        product.options.forEach((option, index) => {
+            optionName = typeof option === 'string' ? option : option.name;
+            const values = [...new Set(product.variants.map(v => v.options[index]))];
+            const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
+            html += `<div class="variant-group" data-option="${optionName}">`;
+            html += `<label for="option-${optionName}">${optionName}</label>`;
+            if (isColor) {
+                html += `<div class="color-swatches">`;
+                values.forEach((value, i) => {
+                    html += `
+                        <label class="swatch">
+                            <input
+                                type="radio"
+                                name="option-${index}"
+                                value="${value}"
+                                ${i === 0 ? 'checked' : ''}>
+                        <div class="swatch-wrapper">
+                            <span
+                                class="swatch-color"
+                                style="background:${value.toLowerCase()};"
+                                title="${value}">
+                            </span>
+                            <span class="value_title">
+                            ${ value }
+                             </span>
+                            </div>
+                        </label>
+                    `;
+                });
+                html += `</div>`;
+            } else {
+                html += `<div class="variant_wrap">
+                <select id="option-${optionName}" name="${optionName}" class="variant-option" data-index="${index}">
+                <option value="">
+                           Choose your ${optionName}
+                        </option>
+                `;
+                values.forEach(value => {
+                    html += `
+                        <option value="${value}">
+                            ${value}
+                        </option>
+                    `;
+                });
+                html += `</select></div>`;
+            }
+            html += `</div>`;
+        });
+        document.querySelector('.popup-variants').innerHTML = html;
+        document.querySelectorAll('.variant-option, .color-swatches input').forEach(el => {
+            el.addEventListener('change', () => updateVariant(product));
+        });
+        updateVariant(product);
+    }
+    function updateVariant(product) {
+
+        const selectedOptions = [];
+        let isSelected = true;
+
+        product.options.forEach((option, index) => {
+
+            const optionName = typeof option === 'string' ? option : option.name;
+
+            const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
+
+            if (isColor) {
+
+                const color = document.querySelector(
+                    `input[name="option-${index}"]:checked`
+                );
+
+                if (color) {
+                    selectedOptions.push(color.value);
+                } else {
+                    selectedOptions.push('');
+                    isSelected = false;
+                }
+
+            } else {
+
+                const select = document.querySelector(
+                    `select[data-index="${index}"]`
+                );
+
+                if (select && select.value !== '') {
+                    selectedOptions.push(select.value);
+                } else {
+                    selectedOptions.push('');
+                    isSelected = false;
+                }
+
+            }
+
+        });
+
+
+        // If size/other dropdown not selected
+        if (!isSelected) {
+
+            document.querySelector('.popup-price').innerHTML = '';
+
+            return;
+
+        }
+
+
+        const variant = product.variants.find(v =>
+            JSON.stringify(v.options) === JSON.stringify(selectedOptions)
+        );
+
+
+        if (!variant) {
+
+            alert('Please choose a valid variant');
+
+            document.querySelector('input[name="id"]').value = '';
+
+            return;
+
+        }
+
+
+        document.querySelector('input[name="id"]').value = variant.id;
+
+        document.querySelector('.popup-price').innerHTML =
+            formatMoney(variant.price);
+
+    }
+    document.querySelectorAll('.look-icon').forEach((icon) => {
+        icon.addEventListener('click', async function () {
+            const handle = this.dataset.handle;
+            const response = await fetch(`${handle}.js`);
+            const product = await response.json();
+            console.log(product)
+            renderPopup(product);
+            document.getElementById('shop-look-popup').classList.add('active');
+        });
+    });
+    
+    document.querySelector('.close-popup').addEventListener('click', async function () {
+        document.getElementById('shop-look-popup').classList.remove('active');
+    })
+
+    document.getElementById('popup-product-form').addEventListener('submit', function(e){
+
+        e.preventDefault();
+        const variantId = this.id.value;
+        if(!variantId){
+            alert('Please choose variant');
+            return;
+        }
+
+
+        fetch('/cart/add.js',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                id: variantId,
+                quantity:1
+            })
+        })
+        .then(res=>res.json())
+        .then(item=>{
+            document.getElementById('shop-look-popup').classList.remove('active');
+            alert('Added!');
+        });
+
+    });
+});

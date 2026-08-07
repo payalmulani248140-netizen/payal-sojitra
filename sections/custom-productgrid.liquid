@@ -1,0 +1,164 @@
+<div class="custom-product-grid">
+    <div class="container">
+        {% if section.settings.header != blank %}
+        <div class="section-header">
+            {{ section.settings.header }}
+        </div>
+        {%endif %}
+        <div class="product-box">
+            {% for block in section.blocks %}
+                {%  assign product = block.settings.product  %}
+                <div class="look-item">
+                    {%- if block.settings.image != blank -%}
+                        {% assign product_image = block.settings.image %}
+                    {% else %}
+                        {% assign product_image = product.featured_image %}
+                    {% endif %}
+
+                    {%- if product_image != blank -%}
+                        <img
+                            src="{{ product_image | image_url: width: 900 }}"
+                            srcset="
+                            {{ product_image | image_url: width: 375 }} 375w,
+                            {{ product_image | image_url: width: 550 }} 550w,
+                            {{ product_image | image_url: width: 750 }} 750w,
+                            {{ product_image | image_url: width: 900 }} 900w,
+                            {{ product_image | image_url: width: 1200 }} 1200w,
+                            {{ product_image | image_url: width: 1500 }} 1500w,
+                            {{ product_image | image_url: width: 1800 }} 1800w
+                            "
+                            sizes="100vw"
+                            width="{{ product_image.width }}"
+                            height="{{ product_image.height }}"
+                            alt="{{ product_image.alt | escape }}"
+                            loading="eager"
+                            fetchpriority="high"
+                        >
+                        {%- endif -%}
+
+                    <button
+                    class="look-icon"
+                    style="
+                    left:{{ block.settings.icon_x }}%;
+                    top:{{ block.settings.icon_y }}%;
+                    "
+                    data-handle="{{ product.url }}">
+                    +
+                    </button>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div id="shop-look-popup" class="shop-look-popup">
+  <div class="popup-content">
+    <div class="close-popup">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.24219 4.24279L12.7275 12.7281" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+        <path d="M4.24219 12.7278L12.7275 4.24249" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <div class="popup-body">
+
+        <div class="product_wrapper">
+             <div class="popup-image"></div>
+
+            <div class="product-info-outer">
+                <h3 class="popup-title"></h3>
+
+                <div class="popup-price"></div>
+
+                <div class="popup-description"></div>
+            </div>
+        </div>
+
+      
+      <div class="popup-info">
+
+        <form id="popup-product-form">
+
+          <div class="popup-variants"></div>
+
+          <input type="hidden" name="id">
+
+          <button type="submit" class="popup-cart-btn">
+            <span>ADD TO CART </span>
+            <svg width="36" height="12" viewBox="0 0 36 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.75 4.77295L9.20657e-08 4.77295L-9.20657e-08 6.27295L0.75 6.27295L0.75 4.77295ZM34.9798 6.05328C35.2727 5.76039 35.2727 5.28551 34.9798 4.99262L30.2068 0.21965C29.9139 -0.0732432 29.4391 -0.0732433 29.1462 0.21965C28.8533 0.512544 28.8533 0.987417 29.1462 1.28031L33.3888 5.52295L29.1462 9.76559C28.8533 10.0585 28.8533 10.5334 29.1462 10.8263C29.4391 11.1191 29.9139 11.1191 30.2068 10.8263L34.9798 6.05328ZM0.75 6.27295L34.4495 6.27295L34.4495 4.77295L0.75 4.77295L0.75 6.27295Z" fill="white"/>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Product Grid",
+  "settings": [
+    {
+        "type": "text",
+        "id":"header",
+        "label": "Heading - Mobile"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop Columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Look Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Look Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "range",
+          "id": "icon_x",
+          "label": "Icon Horizontal Position",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "icon_y",
+          "label": "Icon Vertical Position",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Grid"
+    }
+  ]
+}
+{% endschema %}

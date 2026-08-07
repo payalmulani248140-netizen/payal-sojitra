@@ -444,6 +444,19 @@ span.swatch-color {
         font-size: 42.67px;
         line-height: 35.8px;
     }
+    .right_btn a {
+        height: 117px;
+        justify-content: center;
+        font-size: 42.67px;
+        padding: 0 111px;
+        line-height: 54.61px;
+    }
+    .right_btn {
+        max-width: 100%;
+    }
+    .right_btn a svg {
+        width: 64px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

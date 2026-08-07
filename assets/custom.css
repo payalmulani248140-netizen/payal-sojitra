@@ -460,7 +460,10 @@ span.swatch-color {
     h1.banner_title {
         font-size: 164.78px;
     }
-
+    .custom-content-inner p {
+        font-size: 47.08px;
+        line-height: 140%;
+    }
     .custom-content-wrap {
         max-width: 1137px;
     }

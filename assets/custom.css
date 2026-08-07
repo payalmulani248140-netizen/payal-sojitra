@@ -126,6 +126,9 @@ h1.banner_title {
     line-height: 18px;
     letter-spacing: 0px;
 }
+.custom-btn svg {
+    width: 25px;
+}
 /*Custom banner*/
 
 /* Product Grid */

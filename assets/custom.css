@@ -7,3 +7,15 @@ img {
     margin: 0 auto;
     padding: 0 20px;
 }
+/*Custom banner*/
+.header_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.logo {
+    max-width: 250px;
+}
+/*Custom banner*/

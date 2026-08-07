@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.querySelectorAll('.look-icon').forEach((icon) => {
         icon.addEventListener('click', async function () {
             const handle = this.dataset.handle;
-            const response = await fetch(`/products/${handle}.js`);
-            // const product = await response.json();
-            console.log(response)
-            // renderPopup(product);
+            const response = await fetch(`${handle}.js`);
+            const product = await response.json();
+            console.log(product)
+            renderPopup(product);
             document.getElementById('shop-look-popup').classList.add('active');
         });
     });

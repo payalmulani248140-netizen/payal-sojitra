@@ -124,7 +124,10 @@ h1.banner_title {
     line-height: 18px;
     letter-spacing: 0px;
 }
-button.look-icon {
+/*Custom banner*/
+
+/* Product Grid */
+.look-icon {
     background: #F8F8F8E5;
     border: 0;
     position: absolute;
@@ -141,4 +144,4 @@ button.look-icon {
 .custom-product-grid {
     padding: 100px 0;
 }
-/*Custom banner*/
+/* Product Grid */

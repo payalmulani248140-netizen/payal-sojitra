@@ -79,6 +79,7 @@ h1.banner_title {
     letter-spacing: 0px;
     vertical-align: middle;
     font-family: var(--font-body);
+    margin: 0;
 }
 
 .custom-content-inner p {

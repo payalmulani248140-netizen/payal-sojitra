@@ -115,7 +115,8 @@ h1.banner_title {
     text-transform: uppercase;
     font-family: var(--font-body);
 }
-.content_bottom{
+.content_bottom p{
+    margin: 0;
     color: #000;
      font-family: var(--font-body);
     font-weight: 400;

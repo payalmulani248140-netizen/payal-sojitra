@@ -1,3 +1,27 @@
+<div class="custom-product-grid">
+    <div class="container">
+        <div class="product-box">
+            {% for block in section.blocks %}
+                <div class="look-item">
+                    <img src="{{ block.settings.image | image_url: width: 900 }}">
+
+                    <button
+                    class="look-icon"
+                    style="
+                    left:{{ block.settings.icon_x }}%;
+                    top:{{ block.settings.icon_y }}%;
+                    "
+                    data-product="{{ all_products[block.settings.product].handle }}">
+                    +
+                    </button>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
 {
   "name": "Custom Product Grid",
   "settings": [
@@ -55,3 +79,4 @@
     }
   ]
 }
+{% endschema %}

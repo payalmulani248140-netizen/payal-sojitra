@@ -4,6 +4,7 @@
 /* General css */
 :root{
     --font-body:  "Jost", sans-serif;
+    --font-secondary: "Lustria", serif;
 }
 img {
     height: auto;

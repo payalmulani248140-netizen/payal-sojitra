@@ -87,11 +87,13 @@
     </div>
 </div>
 
+{%  if section.settings.bottom_content != blank %}
 <div class="bottom_banner">
     <div class="content_bottom">
-        SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+        {{ section.settings.bottom_content }}
     </div>
 </div>
+{% endif %}
 
 {% schema %}
 {

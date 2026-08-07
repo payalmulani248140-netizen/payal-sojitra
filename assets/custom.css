@@ -178,6 +178,7 @@ h1.banner_title {
     display: flex;
     width: 100%;
     flex: 0 0 100%;
+    gap: 8px;
 }
 #shop-look-popup.active {
     display: flex;

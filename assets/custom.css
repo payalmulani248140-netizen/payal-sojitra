@@ -383,6 +383,13 @@ span.swatch-color {
 .value_title {
     display: block;
     padding-left: 8px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: capitalize;
+
 }
 .swatch input[type="radio"]:checked ~ .swatch-wrapper .value_title {
   font-weight: bold;

@@ -483,6 +483,10 @@ span.swatch-color {
         height: 46.73px;
         font-size: 36px;
     }
+
+    .product-box {
+        gap: 42px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

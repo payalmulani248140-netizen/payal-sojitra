@@ -60,10 +60,15 @@
         {% endif %}
     <div class="custom-content">
         <div class="container">
-            <h1 class="banner_title">The Gift Guide</h1>
+            {% if section.settings.header != blank %}
+                <h1 class="banner_title">{{section.settings.header}}</h1>
+                {%endif %}
+            {% if section.settings.subcontent != blank %}
             <div class="custom-content">
-                Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+               {{  section.settings.subcontent }}
             </div>
+                {%endif %}
+
              {% if section.settings.banner_link != blank %}
             <a href="{{ section.settings.banner_link }}" class="custom-btn">
             {% endif %}

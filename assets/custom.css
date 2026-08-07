@@ -423,5 +423,16 @@ span.swatch-color {
         right: 0;
         margin: 0 auto;
     }
+    .product-box {
+        grid-template-columns: repeat(2,1fr);
+        gap: 4px;
+    }
+    button.look-icon {
+        width: 15px;
+        height: 15px;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+    }
 }
 /* Mobile version*/

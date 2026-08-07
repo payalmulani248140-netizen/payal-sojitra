@@ -302,7 +302,7 @@ select.variant-option {
     height: 40px;
     padding:  0 13px;
     appearance: none;          /* Standard syntax */
-    font-family: Jost;
+    font-family: var(--font-body);
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
@@ -335,7 +335,7 @@ select.variant-option {
     height: 40px;
     padding:  0 13px;
     appearance: none;          /* Standard syntax */
-    font-family: Jost;
+    font-family: var(--font-body);
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;

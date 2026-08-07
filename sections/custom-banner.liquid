@@ -6,7 +6,7 @@
                 <div class="logo">
                 <img
                     src="{{ section.settings.logo_image | image_url: width: 400 }}"
-                    alt="{{ section.settings.logo_alt | escape }}"
+                    alt="{{ section.settings.logo_image.alt | escape }}"
                     loading="lazy"
                     width="{{ section.settings.logo_image.width }}"
                     height="{{ section.settings.logo_image.height }}"

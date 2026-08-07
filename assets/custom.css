@@ -436,6 +436,7 @@ span.swatch-color {
     }
     .banner {
         order: 2;
+        position: relative;
     }
     .custom-content-wrap {
         padding-top: 49px;
@@ -454,6 +455,12 @@ span.swatch-color {
     }
     .custom-btn.mobile_btn{
         display: block;
+        position: absolute;
+        bottom: 39px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
     }
     .section-header{
         display: block;

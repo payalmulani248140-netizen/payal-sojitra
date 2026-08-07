@@ -396,7 +396,8 @@ span.swatch-color {
   font-weight: bold;
 }
 /* Popup*/
-.mobile_icon,.section-header{
+.mobile_icon,.section-header,.custom-btn.mobile_btn
+{
     display: none;
 }
 /* Mobile version*/

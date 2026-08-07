@@ -95,6 +95,16 @@ h1.banner_title {
     text-align: center;
     padding: 20px 0;
 }
+.custom-btn {
+    background: #000;
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    max-width: max-content;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+}
 .custom-btn span {
     font-weight: 400;
     font-size: 16.66px;

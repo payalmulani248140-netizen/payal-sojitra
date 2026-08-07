@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function updateVariant(product) {
 
         const selectedOptions = [];
-
+        console.log('product.options',product.options)
         product.options.forEach((optionName, index) => {
 
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());

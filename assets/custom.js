@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             <img src="${product.featured_image}" alt="${product.title}">
         `;
         document.querySelector('.popup-title').textContent = product.title;
-        document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(product.price);
+        // document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(product.price);
         document.querySelector('.popup-description').innerHTML =  product.description;
         let html = '';
         product.options.forEach((optionName, index) => {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const variant = product.variants.find(v =>JSON.stringify(v.options) === JSON.stringify(values));
         if (!variant) return;
         document.querySelector('input[name="id"]').value = variant.id;
-        document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(variant.price);
+        // document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(variant.price);
     }
     document.querySelectorAll('.look-icon').forEach((icon) => {
         icon.addEventListener('click', async function () {

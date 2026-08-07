@@ -11,6 +11,9 @@ img {
 /* General css */
 
 /*Custom banner*/
+header {
+    background: #F5F5F5;
+}
 .header_wrap {
     display: flex;
     align-items: center;

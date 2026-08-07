@@ -21,6 +21,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
             select.addEventListener('change', () => updateVariant(product));
         });
     }
+    function updateVariant(product) {
+        const values = [];
+        document.querySelectorAll('.variant-option').forEach(select => {
+            values.push(select.value);
+        });
+        const variant = product.variants.find(v =>JSON.stringify(v.options) === JSON.stringify(values));
+        if (!variant) return;
+        document.querySelector('input[name="id"]').value = variant.id;
+        document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(variant.price);
+    }
     document.querySelectorAll('.shop-look-icon').forEach((icon) => {
         icon.addEventListener('click', async function () {
             const handle = this.dataset.handle;

@@ -25,9 +25,17 @@
         "banner_link": "shopify://collections/all",
         "bottom_content": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>"
       }
+    },
+    "custom_productgrid_GhNzGW": {
+      "type": "custom-productgrid",
+      "name": "Custom Product Grid",
+      "settings": {
+        "columns": 3
+      }
     }
   },
   "order": [
-    "custom_banner_VgaM6X"
+    "custom_banner_VgaM6X",
+    "custom_productgrid_GhNzGW"
   ]
 }

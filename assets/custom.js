@@ -1,55 +1,37 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     function renderPopup(product) {
+
         document.querySelector('.popup-image').innerHTML = `
             <img src="${product.featured_image}" alt="${product.title}">
         `;
+
         document.querySelector('.popup-title').textContent = product.title;
-        // document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(product.price);
-        document.querySelector('.popup-description').innerHTML =  product.description;
+        document.querySelector('.popup-description').innerHTML = product.description;
+
         let html = '';
+
         product.options.forEach((optionName, index) => {
-            html += `<label>${optionName}</label><select class="variant-option" data-index="${index}">`;
-            [...new Set(product.variants.map(v => v.options[index]))].forEach(value => {
-                html += `<option value="${value}">${value}</option>`;
-            });
-            html += `</select>`;
-        });
 
-        document.querySelector('.popup-variants').innerHTML = html;
-        updateVariant(product);
-        document.querySelectorAll('.variant-option').forEach(select => {
-            select.addEventListener('change', () => updateVariant(product));
-        });
-    }
-    function renderVariants(product) {
-        const container = document.querySelector('.popup-variants');
-        container.innerHTML = '';
+            const values = [...new Set(product.variants.map(v => v.options[index]))];
 
-        product.options.forEach((optionName, optionIndex) => {
+            const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
 
-            const values = [...new Set(product.variants.map(v => v.options[optionIndex]))];
-
-            const isColor =
-                optionName.toLowerCase() === 'color' ||
-                optionName.toLowerCase() === 'colour';
+            html += `<div class="variant-group">`;
+            html += `<label>${optionName}</label>`;
 
             if (isColor) {
 
-                let html = `
-                    <div class="variant-group">
-                        <label>${optionName}</label>
-                        <div class="color-swatches">
-                `;
+                html += `<div class="color-swatches">`;
 
-                values.forEach((value, index) => {
+                values.forEach((value, i) => {
 
                     html += `
                         <label class="swatch">
                             <input
                                 type="radio"
-                                name="option-${optionIndex}"
+                                name="option-${index}"
                                 value="${value}"
-                                ${index === 0 ? 'checked' : ''}>
+                                ${i === 0 ? 'checked' : ''}>
 
                             <span
                                 class="swatch-color"
@@ -61,43 +43,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 });
 
-                html += `
-                        </div>
-                    </div>
-                `;
-
-                container.insertAdjacentHTML('beforeend', html);
+                html += `</div>`;
 
             } else {
 
-                let html = `
-                    <div class="variant-group">
-                        <label>${optionName}</label>
+                html += `<select class="variant-option" data-index="${index}">`;
 
-                        <select class="variant-select" data-index="${optionIndex}">
-                `;
+                values.forEach(value => {
 
-                values.forEach((value) => {
-
-                    html += `<option value="${value}">${value}</option>`;
+                    html += `
+                        <option value="${value}">
+                            ${value}
+                        </option>
+                    `;
 
                 });
 
-                html += `
-                        </select>
-                    </div>
-                `;
-
-                container.insertAdjacentHTML('beforeend', html);
+                html += `</select>`;
 
             }
 
+            html += `</div>`;
+
         });
 
+        document.querySelector('.popup-variants').innerHTML = html;
+
         document
-            .querySelectorAll('.swatch input, .variant-select')
+            .querySelectorAll('.variant-option, .color-swatches input')
             .forEach(el => {
+
                 el.addEventListener('change', () => updateVariant(product));
+
             });
 
         updateVariant(product);
@@ -105,16 +82,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     function updateVariant(product) {
 
-        const selected = [];
-        product.options.forEach((option, index) => {
-            const isColor = option.toLowerCase() === 'color' || option.toLowerCase() === 'colour';
+        const selectedOptions = [];
+
+        product.options.forEach((optionName, index) => {
+
+            const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
+
             if (isColor) {
-                selected.push(document.querySelector(`input[name="option-${index}"]:checked`).value);
+
+                selectedOptions.push(
+                    document.querySelector(`input[name="option-${index}"]:checked`).value
+                );
+
             } else {
-                selected.push(
-                    document.querySelector(
-                        `.variant-select[data-index="${index}"]`
-                    ).value
+
+                selectedOptions.push(
+                    document.querySelector(`select[data-index="${index}"]`).value
                 );
 
             }
@@ -122,7 +105,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
         const variant = product.variants.find(v =>
-            JSON.stringify(v.options) === JSON.stringify(selected)
+            JSON.stringify(v.options) === JSON.stringify(selectedOptions)
         );
 
         if (!variant) return;

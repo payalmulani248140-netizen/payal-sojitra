@@ -1,5 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
+
+
+        const header = document.querySelector("header");
+        const button = document.querySelector(".mobile_icon");
+    if(header){
+        button.addEventListener("click", () => {
+           header.classList.toggle("active_header");
+        });
+    }
+
     function formatMoney(cents) {
     return new Intl.NumberFormat('en-US', {
         style: 'currency',

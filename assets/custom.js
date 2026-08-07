@@ -1,36 +1,20 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     function renderPopup(product) {
 
-        document.querySelector('.popup-image').innerHTML = `
-            <img src="${product.featured_image}" alt="${product.title}">
-        `;
-
+        document.querySelector('.popup-image').innerHTML = `<img src="${product.featured_image}" alt="${product.title}">`;
         document.querySelector('.popup-title').textContent = product.title;
         document.querySelector('.popup-description').innerHTML = product.description;
-
         let html = '';
 
         product.options.forEach((option, index) => {
-
-            optionName =
-                typeof option === 'string'
-                    ? option
-                    : option.name;
-
-
+            optionName = typeof option === 'string' ? option : option.name;
             const values = [...new Set(product.variants.map(v => v.options[index]))];
-
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
-
             html += `<div class="variant-group">`;
             html += `<label>${optionName}</label>`;
-
             if (isColor) {
-
                 html += `<div class="color-swatches">`;
-
                 values.forEach((value, i) => {
-
                     html += `
                         <label class="swatch">
                             <input
@@ -46,82 +30,41 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             </span>
                         </label>
                     `;
-
                 });
-
                 html += `</div>`;
-
             } else {
-
                 html += `<select class="variant-option" data-index="${index}">`;
-
                 values.forEach(value => {
-
                     html += `
                         <option value="${value}">
                             ${value}
                         </option>
                     `;
-
                 });
-
                 html += `</select>`;
-
             }
-
             html += `</div>`;
-
         });
-
         document.querySelector('.popup-variants').innerHTML = html;
-
-        document
-            .querySelectorAll('.variant-option, .color-swatches input')
-            .forEach(el => {
-
-                el.addEventListener('change', () => updateVariant(product));
-
-            });
-
+        document.querySelectorAll('.variant-option, .color-swatches input').forEach(el => {
+            el.addEventListener('change', () => updateVariant(product));
+        });
         updateVariant(product);
-
     }
     function updateVariant(product) {
-
         const selectedOptions = [];
          product.options.forEach((option, index) => {
-
-            optionName =
-                typeof option === 'string'
-                    ? option
-                    : option.name;
-
+            optionName = typeof option === 'string' ? option : option.name;
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
-
             if (isColor) {
-
-                selectedOptions.push(
-                    document.querySelector(`input[name="option-${index}"]:checked`).value
-                );
-
+                selectedOptions.push(document.querySelector(`input[name="option-${index}"]:checked`).value);
             } else {
-
-                selectedOptions.push(
-                    document.querySelector(`select[data-index="${index}"]`).value
-                );
-
+                selectedOptions.push(document.querySelector(`select[data-index="${index}"]`).value);
             }
-
         });
-
-        const variant = product.variants.find(v =>
-            JSON.stringify(v.options) === JSON.stringify(selectedOptions)
-        );
-
+        const variant = product.variants.find(v => JSON.stringify(v.options) === JSON.stringify(selectedOptions));
         if (!variant) return;
-
         document.querySelector('input[name="id"]').value = variant.id;
-
         // document.querySelector('.popup-price').innerHTML =
         //     Shopify.formatMoney(variant.price);
 
@@ -152,6 +95,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             .then(r=>r.json())
             .then(item=>{
                 document.getElementById('shop-look-popup').classList.remove('active');
+                alert('Added!')
             });
         });
 });

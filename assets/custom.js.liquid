@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const values = [...new Set(product.variants.map(v => v.options[index]))];
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
             html += `<div class="variant-group" data-option="${optionName}">`;
-            html += `<label>${optionName}</label>`;
+            html += `<label for="option-${optionName}">${optionName}</label>`;
             if (isColor) {
                 html += `<div class="color-swatches">`;
                 values.forEach((value, i) => {

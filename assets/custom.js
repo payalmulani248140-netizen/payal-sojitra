@@ -104,14 +104,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     }
     function updateVariant(product) {
-        const values = [];
-        document.querySelectorAll('.variant-option').forEach(select => {
-            values.push(select.value);
+
+        const selected = [];
+        product.options.forEach((option, index) => {
+            const isColor = option.toLowerCase() === 'color' || option.toLowerCase() === 'colour';
+            if (isColor) {
+                selected.push(document.querySelector(`input[name="option-${index}"]:checked`).value);
+            } else {
+                selected.push(
+                    document.querySelector(
+                        `.variant-select[data-index="${index}"]`
+                    ).value
+                );
+
+            }
+
         });
-        const variant = product.variants.find(v =>JSON.stringify(v.options) === JSON.stringify(values));
+
+        const variant = product.variants.find(v =>
+            JSON.stringify(v.options) === JSON.stringify(selected)
+        );
+
         if (!variant) return;
+
         document.querySelector('input[name="id"]').value = variant.id;
-        // document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(variant.price);
+
+        document.querySelector('.popup-price').innerHTML =
+            Shopify.formatMoney(variant.price);
+
     }
     document.querySelectorAll('.look-icon').forEach((icon) => {
         icon.addEventListener('click', async function () {

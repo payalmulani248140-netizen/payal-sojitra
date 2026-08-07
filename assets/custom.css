@@ -54,6 +54,26 @@ header{
 .right_btn a span {
     color: #000;
 }
+.right_btn svg {
+  transition: transform 0.35s ease;
+}
+.right_btn:hover svg {
+  transform: translateX(10px);
+}
+
+@keyframes arrowBounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+ 
 .subtext p {
     margin: 0;
     font-family: var(--font-body);

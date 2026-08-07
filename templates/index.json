@@ -88,6 +88,7 @@
       ],
       "name": "Custom Product Grid",
       "settings": {
+        "header": "Tisso vison in the wild",
         "columns": 3
       }
     }

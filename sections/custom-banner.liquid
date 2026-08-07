@@ -49,7 +49,7 @@
 
             <img
                 src="{{ section.settings.banner_image | image_url: width: 1800 }}"
-                alt="{{ section.settings.banner_alt | escape }}"
+                alt="{{ section.settings.banner_image.alt | escape }}"
                 loading="lazy"
                 width="{{ section.settings.banner_image.width }}"
                 height="{{ section.settings.banner_image.height }}">
@@ -105,10 +105,9 @@
       "default": "Logo"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "subtext",
       "label": "Sub Text",
-      "default": "Find the ideal gift for your loved ones."
     },
     {
       "type": "text",
@@ -135,7 +134,16 @@
         "id": "banner_image_mobile",
         "label": "Mobile Banner"
     },
- 
+    {
+        "type": "text",
+        "id": "header",
+        "label": "Heading"
+    },
+      {
+      "type": "richtext",
+      "id": "subcontent",
+      "label": "Sub Content"
+    },
     {
         "type": "url",
         "id": "banner_link",

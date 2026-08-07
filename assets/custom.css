@@ -396,3 +396,22 @@ span.swatch-color {
   font-weight: bold;
 }
 /* Popup*/
+
+/* Mobile version*/
+@media (max-width:768px){
+    .custom-content-wrap {background: transparent;position: relative;}
+
+    .custom-banner {
+    display: grid;
+    }
+
+    .subtext {
+    display: none;
+    }
+
+    .right_btn {
+    display: none;
+    }
+
+}
+/* Mobile version*/

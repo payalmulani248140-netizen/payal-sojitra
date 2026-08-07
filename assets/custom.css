@@ -463,8 +463,10 @@ span.swatch-color {
         bottom: 39px;
         left: 0;
         right: 0;
+        max-width: 193px;
         text-align: center;
         margin: 0 auto;
+        justify-content: center;
     }
     .section-header{
         display: block;

@@ -440,6 +440,10 @@ span.swatch-color {
     .header_wrap {
         padding: 60px 0;
     }
+    .subtext p {
+        font-size: 42.67px;
+        line-height: 35.8px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

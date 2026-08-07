@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
-window.moneyFormat = {{ shop.money_format | json }};
+window.moneyFormat = {{ shop.money_format }};
     function formatMoney(cents) {
         return window.moneyFormat.replace('{{amount}}', (cents / 100).toFixed(2));
     }

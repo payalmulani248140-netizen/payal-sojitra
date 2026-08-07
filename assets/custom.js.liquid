@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById('shop-look-popup').classList.add('active');
         });
     });
+    
+    document.querySelector('.close-popup').addEventListener('click', async function () {
+        document.getElementById('shop-look-popup').classList.remove('active');
+    })
 
     document.getElementById('popup-product-form') .addEventListener('submit', function(e){
             e.preventDefault();

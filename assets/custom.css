@@ -312,6 +312,7 @@ select.variant-option {
 .variant-group .variant_wrap{
     position: relative;
     width: 100%;
+    margin-top: 6px;
 }
 .variant-group .variant_wrap:after {
     content: '';
@@ -343,5 +344,41 @@ select.variant-option {
 }
 .variant-group label input[type="radio"] {
     display: none;
+}
+.color-swatches {
+    display: flex;
+    border: 0.5px solid #000000;
+    height: 40px;
+    align-items: center;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.color-swatches .swatch:last-child {
+    border-left: 0.5px solid #000000;
+}
+
+label.swatch {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.swatch-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+span.swatch-color {
+    width: 4px;
+    display: block;
+    height: 100%;
+    border-right: 0.5px solid #000000;
+}
+
+.value_title {
+    display: block;
+    padding-left: 8px;
 }
 /* Popup*/

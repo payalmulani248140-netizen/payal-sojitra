@@ -1,9 +1,34 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-   function renderVariants(product) {
+    function renderPopup(product) {
+        document.querySelector('.popup-image').innerHTML = `
+            <img src="${product.featured_image}" alt="${product.title}">
+        `;
+        document.querySelector('.popup-title').textContent = product.title;
+        // document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(product.price);
+        document.querySelector('.popup-description').innerHTML =  product.description;
+        let html = '';
+        product.options.forEach((optionName, index) => {
+            html += `<label>${optionName}</label><select class="variant-option" data-index="${index}">`;
+            [...new Set(product.variants.map(v => v.options[index]))].forEach(value => {
+                html += `<option value="${value}">${value}</option>`;
+            });
+            html += `</select>`;
+        });
+
+        document.querySelector('.popup-variants').innerHTML = html;
+        updateVariant(product);
+        document.querySelectorAll('.variant-option').forEach(select => {
+            select.addEventListener('change', () => updateVariant(product));
+        });
+    }
+    function renderVariants(product) {
         const container = document.querySelector('.popup-variants');
         container.innerHTML = '';
+
         product.options.forEach((optionName, optionIndex) => {
+
             const values = [...new Set(product.variants.map(v => v.options[optionIndex]))];
+
             const isColor =
                 optionName.toLowerCase() === 'color' ||
                 optionName.toLowerCase() === 'colour';

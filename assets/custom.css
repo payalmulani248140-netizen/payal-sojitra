@@ -131,6 +131,10 @@ h1.banner_title {
     background: #F8F8F8E5;
     border: 0;
     position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    font-size: 22px;
 }
 .look-item {
     position: relative;

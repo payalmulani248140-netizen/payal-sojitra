@@ -467,6 +467,16 @@ span.swatch-color {
     .custom-content-wrap {
         max-width: 1137px;
     }
+    .custom-btn span {
+        font-size: 37.66px;
+        line-height: 48.21px;
+    }
+    .custom-btn {
+        width: 100%;
+        max-width: 517px;
+        justify-content: center;
+        height: 117px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

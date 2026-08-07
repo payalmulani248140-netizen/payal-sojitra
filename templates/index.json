@@ -28,6 +28,19 @@
     },
     "custom_productgrid_GhNzGW": {
       "type": "custom-productgrid",
+      "blocks": {
+        "look_YPiQVQ": {
+          "type": "look",
+          "settings": {
+            "product": "black-leather-bag",
+            "icon_x": 48,
+            "icon_y": 55
+          }
+        }
+      },
+      "block_order": [
+        "look_YPiQVQ"
+      ],
       "name": "Custom Product Grid",
       "settings": {
         "columns": 3

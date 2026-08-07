@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelector('.popup-description').innerHTML = product.description;
 
         let html = '';
-        console.log('product.options',product.options)
 
         product.options.forEach((optionName, index) => {
+
+
+        console.log('optionName',optionName)
 
             const values = [...new Set(product.variants.map(v => v.options[index]))];
 

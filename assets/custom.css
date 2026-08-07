@@ -341,4 +341,7 @@ select.variant-option {
     letter-spacing: -2%;
     vertical-align: middle;
 }
+.variant-group label input[type="radio"] {
+    display: none;
+}
 /* Popup*/

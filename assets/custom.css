@@ -458,7 +458,7 @@ span.swatch-color {
         display: none;
     }
     .custom-btn.mobile_btn{
-        display: block;
+        display: flex;
         position: absolute;
         bottom: 39px;
         left: 0;

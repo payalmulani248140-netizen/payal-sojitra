@@ -248,4 +248,38 @@ h3.popup-title {
     flex: 0 0 120px;
     max-width: 120px;
 }
+
+.popup-variants {
+    display: grid;
+}
+
+.variant-group[data-option="Color"] {
+    order: 1;
+}
+
+.variant-group[data-option="Size"] {
+    order: 2;
+}
+
+.variant-group[data-option="Size"] label {
+    width: 100%;
+}
+
+.variant-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.variant-group label {
+    width: 100%;
+    font-family: Jost;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+}
 /* Popup*/

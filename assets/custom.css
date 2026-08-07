@@ -384,4 +384,7 @@ span.swatch-color {
     display: block;
     padding-left: 8px;
 }
+.swatch input[type="radio"]:checked ~ .swatch-wrapper .value_title {
+  font-weight: bold;
+}
 /* Popup*/

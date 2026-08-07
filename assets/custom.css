@@ -167,9 +167,7 @@ h1.banner_title {
     right: 0;
     align-items: center;
 }
-.close-popup{
-    cursor: pointer;
-}
+ 
 .popup-body {
     display: flex;
     flex-wrap: wrap;
@@ -183,7 +181,15 @@ h1.banner_title {
 #shop-look-popup.active {
     display: flex;
 }
+.close-popup {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
 
+.product-info-outer {
+    text-align: left;
+}
 .popup-content {
     max-width: 600px;
     background: #fff;

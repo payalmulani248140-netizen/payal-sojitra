@@ -413,10 +413,10 @@ span.swatch-color {
     .custom-banner {
         display: grid;
     }
-    .subtext {
+    .header_wrap .subtext {
         display: none;
     }
-    .right_btn {
+    .header_wrap .right_btn {
         display: none;
     }
     .logo {
@@ -494,5 +494,6 @@ span.swatch-color {
     .custom-product-grid {
         padding: 40px 0;
     }
+    .mobile_dropdown
 }
 /* Mobile version*/

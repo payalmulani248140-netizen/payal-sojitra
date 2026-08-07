@@ -254,7 +254,7 @@ h3.popup-title {
 .popup-variants {
     display: grid;
 }
-
+.
 .variant-group[data-option="Color"] {
     order: 1;
 }
@@ -281,5 +281,17 @@ h3.popup-title {
     line-height: 130%;
     letter-spacing: 0%;
     text-align: left;
+}
+popup-cart-btn {
+    background: #000;
+    color: #fff;
+    border: 0;
+    height: 45px;
+    width: 100%;
+    margin-top: 51px;
+}
+
+.popup-info {
+    width: 100%;
 }
 /* Popup*/

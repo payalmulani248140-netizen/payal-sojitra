@@ -68,20 +68,77 @@ document.addEventListener("DOMContentLoaded", (event) => {
         updateVariant(product);
     }
     function updateVariant(product) {
+
         const selectedOptions = [];
-         product.options.forEach((option, index) => {
-            optionName = typeof option === 'string' ? option : option.name;
+        let isSelected = true;
+
+        product.options.forEach((option, index) => {
+
+            const optionName = typeof option === 'string' ? option : option.name;
+
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());
+
             if (isColor) {
-                selectedOptions.push(document.querySelector(`input[name="option-${index}"]:checked`).value);
+
+                const color = document.querySelector(
+                    `input[name="option-${index}"]:checked`
+                );
+
+                if (color) {
+                    selectedOptions.push(color.value);
+                } else {
+                    selectedOptions.push('');
+                    isSelected = false;
+                }
+
             } else {
-                selectedOptions.push(document.querySelector(`select[data-index="${index}"]`).value);
+
+                const select = document.querySelector(
+                    `select[data-index="${index}"]`
+                );
+
+                if (select && select.value !== '') {
+                    selectedOptions.push(select.value);
+                } else {
+                    selectedOptions.push('');
+                    isSelected = false;
+                }
+
             }
+
         });
-        const variant = product.variants.find(v => JSON.stringify(v.options) === JSON.stringify(selectedOptions));
-        if (!variant) return;
+
+
+        // If size/other dropdown not selected
+        if (!isSelected) {
+
+            document.querySelector('.popup-price').innerHTML = '';
+
+            return;
+
+        }
+
+
+        const variant = product.variants.find(v =>
+            JSON.stringify(v.options) === JSON.stringify(selectedOptions)
+        );
+
+
+        if (!variant) {
+
+            alert('Please choose a valid variant');
+
+            document.querySelector('input[name="id"]').value = '';
+
+            return;
+
+        }
+
+
         document.querySelector('input[name="id"]').value = variant.id;
-        document.querySelector('.popup-price').innerHTML = formatMoney(variant.price);
+
+        document.querySelector('.popup-price').innerHTML =
+            formatMoney(variant.price);
 
     }
     document.querySelectorAll('.look-icon').forEach((icon) => {

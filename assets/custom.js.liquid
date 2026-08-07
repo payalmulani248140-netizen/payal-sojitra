@@ -1,7 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
     function formatMoney(cents) {
-        return window.moneyFormat.replace('{{amount}}', (cents / 100).toFixed(2));
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    }).format(cents / 100);
     }
     function renderPopup(product) {
 

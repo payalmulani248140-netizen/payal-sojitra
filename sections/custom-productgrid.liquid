@@ -2,6 +2,7 @@
     <div class="container">
         <div class="product-box">
             {% for block in section.blocks %}
+                {%  assign product = block.settings.product  %}
                 <div class="look-item">
                     {%- if block.settings.image != blank -%}
                         {% assign product_image = block.settings.image %}
@@ -36,7 +37,7 @@
                     left:{{ block.settings.icon_x }}%;
                     top:{{ block.settings.icon_y }}%;
                     "
-                    data-product="{{ all_products[block.settings.product].handle }}">
+                    data-product="{{ product.handle }}">
                     +
                     </button>
 

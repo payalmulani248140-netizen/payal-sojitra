@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelector('input[name="id"]').value = variant.id;
         document.querySelector('.popup-price').innerHTML = Shopify.formatMoney(variant.price);
     }
-    document.querySelectorAll('.shop-look-icon').forEach((icon) => {
+    document.querySelectorAll('.look-icon').forEach((icon) => {
         icon.addEventListener('click', async function () {
             const handle = this.dataset.handle;
             const response = await fetch(`/products/${handle}.js`);

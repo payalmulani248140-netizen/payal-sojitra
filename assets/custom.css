@@ -311,6 +311,7 @@ select.variant-option {
 }
 .variant-group .variant_wrap{
     position: relative;
+    width: 100%;
 }
 .variant-group .variant_wrap:after {
     content: '';

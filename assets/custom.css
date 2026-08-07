@@ -430,6 +430,11 @@ span.swatch-color {
     display: none;
 }
 /* Mobile version*/
+@media (min-width:3000px){
+    .container {
+        max-width: 2840px;
+    }
+}
 @media (max-width:768px){
     .mobile_icon{
         display: block;

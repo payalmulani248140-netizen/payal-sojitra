@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         let html = '';
 
-        product.options.forEach((optionName, index) => {
+        product.options.forEach((option, index) => {
 
      optionName =
         typeof option === 'string'

@@ -89,29 +89,21 @@ h1.banner_title {
     letter-spacing: 0px;
     color: #000000;
     font-family: var(--font-body);
-    margin: 40px 0;
-}
-.custom-btn {
-    background: #000;
-    color: #fff;
-    display: flex;
-    text-decoration: none;
-    max-width: max-content;
-    padding: 10px 20px;
-    align-items: center;
-    gap: 10px;
-}
-.custom-btn svg {
-    width: 25px;
-    height: 20px;
-}
-.custom-btn span {
-    text-transform: uppercase;
 }
 .bottom_banner {
     background: #F5F5F5;
     text-align: center;
     padding: 20px 0;
+}
+.custom-btn span {
+    font-weight: 400;
+    font-size: 16.66px;
+    line-height: 30.21px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-family: var(--font-body);
 }
 .content_bottom{
     color: #000;

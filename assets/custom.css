@@ -430,6 +430,7 @@ span.swatch-color {
         max-height: 300px;
         opacity: 1;
         transform: translateY(0);
+        padding: 25px 0;
     }
     .right_btn {
         max-width: 190px;

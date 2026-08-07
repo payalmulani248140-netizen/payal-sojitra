@@ -3,23 +3,28 @@
         <div class="product-box">
             {% for block in section.blocks %}
                 <div class="look-item">
-
                     {%- if block.settings.image != blank -%}
+                        {% assign product_image = block.settings.image %}
+                    {% else %}
+                        {% assign product_image = product.featured_image %}
+                    {% endif %}
+
+                    {%- if product_image != blank -%}
                         <img
-                            src="{{ block.settings.image | image_url: width: 900 }}"
+                            src="{{ product_image | image_url: width: 900 }}"
                             srcset="
-                            {{ block.settings.image | image_url: width: 375 }} 375w,
-                            {{ block.settings.image | image_url: width: 550 }} 550w,
-                            {{ block.settings.image | image_url: width: 750 }} 750w,
-                            {{ block.settings.image | image_url: width: 900 }} 900w,
-                            {{ block.settings.image | image_url: width: 1200 }} 1200w,
-                            {{ block.settings.image | image_url: width: 1500 }} 1500w,
-                            {{ block.settings.image | image_url: width: 1800 }} 1800w
+                            {{ product_image | image_url: width: 375 }} 375w,
+                            {{ product_image | image_url: width: 550 }} 550w,
+                            {{ product_image | image_url: width: 750 }} 750w,
+                            {{ product_image | image_url: width: 900 }} 900w,
+                            {{ product_image | image_url: width: 1200 }} 1200w,
+                            {{ product_image | image_url: width: 1500 }} 1500w,
+                            {{ product_image | image_url: width: 1800 }} 1800w
                             "
                             sizes="100vw"
-                            width="{{ block.settings.image.width }}"
-                            height="{{ block.settings.image.height }}"
-                            alt="{{ block.settings.image.alt | escape }}"
+                            width="{{ product_image.width }}"
+                            height="{{ product_image.height }}"
+                            alt="{{ product_image.alt | escape }}"
                             loading="eager"
                             fetchpriority="high"
                         >

@@ -1,3 +1,4 @@
+/* General css */
 img {
     height: auto;
     width: 100%;
@@ -7,6 +8,8 @@ img {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* General css */
+
 /*Custom banner*/
 .header_wrap {
     display: flex;

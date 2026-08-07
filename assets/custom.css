@@ -428,9 +428,29 @@ span.swatch-color {
     .bottom_banner {
         padding: 10px 0;
     }
-
     .content_bottom p {
         font-size: 12px;
+    }
+    .custom-content {
+        order: 1;
+    }
+    .banner {
+        order: 2;
+    }
+    .custom-content-wrap {
+        padding-top: 49px;
+        padding-right: 0;
+    }
+    h1.banner_title {
+        font-size: 30px;
+        text-align: center;
+    }
+    .custom-content-inner p {
+        font-size: 16px;
+        text-align: center;
+    }
+    .custom-btn {
+        display: none;
     }
     .section-header{
         display: block;

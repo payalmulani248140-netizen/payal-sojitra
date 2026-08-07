@@ -401,19 +401,18 @@ span.swatch-color {
 }
 /* Mobile version*/
 @media (max-width:768px){
+    .mobile_icon{
+        display: block;
+    }
     .custom-content-wrap {background: transparent;position: relative;}
-
     .custom-banner {
-    display: grid;
+        display: grid;
     }
-
     .subtext {
-    display: none;
+        display: none;
     }
-
     .right_btn {
-    display: none;
+        display: none;
     }
-
 }
 /* Mobile version*/

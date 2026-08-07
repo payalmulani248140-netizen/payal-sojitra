@@ -173,6 +173,8 @@ h1.banner_title {
 .popup-body {
     display: flex;
     flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 100vh;
 }
 .product_wrapper {
     display: flex;
@@ -273,11 +275,9 @@ h3.popup-title {
 
 .variant-group label {
     width: 100%;
-    font-family: Jost;
+    font-family: var(--font-body);
     font-weight: 400;
-    font-style: Regular;
     font-size: 14px;
-    leading-trim: NONE;
     line-height: 130%;
     letter-spacing: 0%;
     text-align: left;

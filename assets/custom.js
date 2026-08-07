@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelector('.popup-description').innerHTML = product.description;
 
         let html = '';
+        console.log('product.options',product.options)
 
         product.options.forEach((optionName, index) => {
 
@@ -83,7 +84,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function updateVariant(product) {
 
         const selectedOptions = [];
-        console.log('product.options',product.options)
         product.options.forEach((optionName, index) => {
 
             const isColor = ['color', 'colour'].includes(optionName.toLowerCase());

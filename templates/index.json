@@ -36,10 +36,46 @@
             "icon_x": 48,
             "icon_y": 55
           }
+        },
+        "look_FbtcpX": {
+          "type": "look",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "icon_x": 69,
+            "icon_y": 47
+          }
+        },
+        "look_GLFj3h": {
+          "type": "look",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "icon_x": 55,
+            "icon_y": 17
+          }
+        },
+        "look_9XhKCR": {
+          "type": "look",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "icon_x": 65,
+            "icon_y": 17
+          }
+        },
+        "look_ECx6TN": {
+          "type": "look",
+          "settings": {
+            "product": "classic-varsity-top",
+            "icon_x": 46,
+            "icon_y": 21
+          }
         }
       },
       "block_order": [
-        "look_YPiQVQ"
+        "look_YPiQVQ",
+        "look_FbtcpX",
+        "look_GLFj3h",
+        "look_9XhKCR",
+        "look_ECx6TN"
       ],
       "name": "Custom Product Grid",
       "settings": {

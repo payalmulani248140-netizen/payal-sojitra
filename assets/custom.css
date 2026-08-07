@@ -73,13 +73,15 @@ header{
 
 .bottom_banner {
     background: #F5F5F5;
-    font-family: var(--font-body);
+    text-align: center;
+    padding: 20px 0;
+}
+.content_bottom{
+    color: #000;
+     font-family: var(--font-body);
     font-weight: 400;
     font-size: 16.67px;
     line-height: 18px;
     letter-spacing: 0px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 20px 0;
 }
 /*Custom banner*/

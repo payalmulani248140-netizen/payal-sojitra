@@ -46,6 +46,8 @@ header{
     padding: 0 25px;
     align-items: center;
     gap: 10px;
+    transition: 0.35s ease;
+    border: 1px solid #fff544;
 }
 .right_btn a svg {
     width: 20px;
@@ -59,6 +61,10 @@ header{
 }
 .right_btn:hover svg {
   transform: translateX(10px);
+}
+.right_btn a:hover {
+    border: 1px solid #000;
+    background: transparent;
 }
 
 @keyframes arrowBounce {

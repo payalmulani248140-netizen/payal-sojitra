@@ -452,6 +452,9 @@ span.swatch-color {
     .custom-btn {
         display: none;
     }
+    .custom-btn.mobile_btn{
+        display: block;
+    }
     .section-header{
         display: block;
         font-family: var(--font-secondary);

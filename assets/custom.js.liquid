@@ -156,22 +156,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById('shop-look-popup').classList.remove('active');
     })
 
-    document.getElementById('popup-product-form') .addEventListener('submit', function(e){
-            e.preventDefault();
-            fetch('/cart/add.js',{
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body:JSON.stringify({
-                    id:this.id.value,
-                    quantity:1
-                })
+    document.getElementById('popup-product-form').addEventListener('submit', function(e){
+
+        e.preventDefault();
+        const variantId = this.id.value;
+        if(!variantId){
+            alert('Please choose variant');
+            return;
+        }
+
+
+        fetch('/cart/add.js',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                id: variantId,
+                quantity:1
             })
-            .then(r=>r.json())
-            .then(item=>{
-                document.getElementById('shop-look-popup').classList.remove('active');
-                alert('Added!')
-            });
+        })
+        .then(res=>res.json())
+        .then(item=>{
+            document.getElementById('shop-look-popup').classList.remove('active');
+            alert('Added!');
         });
+
+    });
 });

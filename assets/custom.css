@@ -416,6 +416,7 @@ span.swatch-color {
         vertical-align: middle;
         color: #000;
         margin-bottom: 20px;
+        text-align: center;
     }
     .custom-content-wrap {background: transparent;position: relative;}
     .custom-banner {

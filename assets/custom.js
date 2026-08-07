@@ -12,12 +12,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         product.options.forEach((option, index) => {
 
-     optionName =
-        typeof option === 'string'
-            ? option
-            : option.name;
+            optionName =
+                typeof option === 'string'
+                    ? option
+                    : option.name;
 
-        console.log('optionName',optionName)
 
             const values = [...new Set(product.variants.map(v => v.options[index]))];
 

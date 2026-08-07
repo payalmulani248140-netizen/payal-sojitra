@@ -40,4 +40,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById('shop-look-popup').classList.add('active');
         });
     });
+
+    document.getElementById('popup-product-form') .addEventListener('submit', function(e){
+            e.preventDefault();
+            fetch('/cart/add.js',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    id:this.id.value,
+                    quantity:1
+                })
+            })
+            .then(r=>r.json())
+            .then(item=>{
+                document.getElementById('shop-look-popup').classList.remove('active');
+            });
+        });
 });

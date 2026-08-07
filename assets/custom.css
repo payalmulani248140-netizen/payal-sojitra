@@ -401,7 +401,10 @@ span.swatch-color {
 }
 /* Mobile version*/
 @media (max-width:768px){
-    .mobile_icon,.section-header{
+    .mobile_icon{
+        display: block;
+    }
+    .section-header{
         display: block;
     }
     .custom-content-wrap {background: transparent;position: relative;}
@@ -433,6 +436,9 @@ span.swatch-color {
         font-size: 11px;
         display: flex;
         justify-content: center;
+    }
+    .custom-product-grid {
+        padding: 40px 0;
     }
 }
 /* Mobile version*/

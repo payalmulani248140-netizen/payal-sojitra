@@ -478,6 +478,11 @@ span.swatch-color {
         justify-content: center;
         height: 117px;
     }
+    .look-icon {
+        width: 46.73px;
+        height: 46.73px;
+        font-size: 36px;
+    }
 }
 @media (max-width:768px){
     .mobile_icon{

@@ -430,6 +430,12 @@ span.swatch-color {
     .close-icon {
         display: none;
     }
+    .active_header .close-icon{
+        display: block;
+    }
+    .active_header .menu-icon{
+        display: none;
+    }
     .logo {
         max-width: 150px;
         text-align: left;

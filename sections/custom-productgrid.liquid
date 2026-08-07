@@ -1,8 +1,10 @@
 <div class="custom-product-grid">
     <div class="container">
+        {% if section.settings.header != blank %}
         <div class="section-header">
-            Tisso vison in the wild
+            {{ section.settings.header }}
         </div>
+        {%endif %}
         <div class="product-box">
             {% for block in section.blocks %}
                 {%  assign product = block.settings.product  %}

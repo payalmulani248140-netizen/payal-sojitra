@@ -353,7 +353,10 @@ select.variant-option {
     width: 100%;
     margin-top: 6px;
 }
-
+.variant-option:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
 .color-swatches .swatch:last-child {
     border-left: 0.5px solid #000000;
 }

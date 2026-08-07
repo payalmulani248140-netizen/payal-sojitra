@@ -44,7 +44,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
                 html += `</div>`;
             } else {
-                html += `<div class="variant_wrap"><select class="variant-option" data-index="${index}">`;
+                html += `<div class="variant_wrap">
+                <select class="variant-option" data-index="${index}">
+                <option value="">
+                           Choose your ${value}
+                        </option>
+                `;
                 values.forEach(value => {
                     html += `
                         <option value="${value}">

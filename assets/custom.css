@@ -483,7 +483,9 @@ span.swatch-color {
         height: 46.73px;
         font-size: 36px;
     }
-
+    .custom-product-grid {
+        padding: 240px 0;
+    }
     .product-box {
         gap: 42px;
     }

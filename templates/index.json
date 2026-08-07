@@ -68,6 +68,14 @@
             "icon_x": 46,
             "icon_y": 21
           }
+        },
+        "look_FtX7zJ": {
+          "type": "look",
+          "settings": {
+            "product": "dark-denim-top",
+            "icon_x": 40,
+            "icon_y": 55
+          }
         }
       },
       "block_order": [
@@ -75,7 +83,8 @@
         "look_FbtcpX",
         "look_GLFj3h",
         "look_9XhKCR",
-        "look_ECx6TN"
+        "look_ECx6TN",
+        "look_FtX7zJ"
       ],
       "name": "Custom Product Grid",
       "settings": {

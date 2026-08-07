@@ -170,8 +170,13 @@ h1.banner_title {
 
 .popup-body {
     display: flex;
+    flex-wrap: wrap;
 }
-
+.product_wrapper {
+    display: flex;
+    width: 100%;
+    flex: 0 0 100%;
+}
 #shop-look-popup.active {
     display: flex;
 }
